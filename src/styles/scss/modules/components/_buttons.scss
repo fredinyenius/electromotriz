@@ -1,0 +1,104 @@
+.button {
+  display: inline-block;
+  background-color: var(--primary-theme-color);
+  border: 0.0625rem solid var(--primary-theme-color);
+  border-radius: var(--primary-border-radius);
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-famlily);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  transition: background-color 0.25s, border 0.25s, color 0.25s, box-shadow 0.25s, filter 0.25s;
+
+  &:hover {
+    box-shadow: 0 0 0.125rem 0.125rem var(--primary-theme-color);
+    filter: brightness(1.125);
+  }
+
+  @include desktop {
+    font-size: 0.875rem;
+  }
+
+  &--primary {
+    background-color: var(--primary-button-color);
+    border: 0.0625rem solid var(--primary-button-color);
+    color: var(--primary-text-color);
+
+    &:hover {
+      box-shadow: 0 0 0.125rem 0.125rem var(--primary-button-color);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--secondary-button-color);
+    border: 0.0625rem solid var(--secondary-button-color);
+    color: var(--light-primary-text-color);
+
+    &:hover {
+      box-shadow: 0 0 0.125rem 0.125rem var(--secondary-button-color);
+    }
+  }
+
+  &--outline-primary {
+    background-color: transparent;
+    border: 0.0625rem solid var(--primary-button-color);
+
+    &:hover {
+      box-shadow: 0 0 0.25rem 0 var(--primary-button-color);
+    }
+  }
+
+  &--sm {
+    font-size: 0.625rem;
+
+    @include desktop {
+      font-size: 0.75rem;
+    }
+  }
+
+  &--lg {
+    font-size: 0.875rem;
+
+    @include desktop {
+      font-size: 1rem;
+    }
+  }
+
+  &--circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  &--products {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transition: background-color 0.25s, border 0.25s, color 0.25s, box-shadow 0.25s, filter 0.25s, opacity 0.25s;
+  }
+
+  &--shopping-cart {
+    position: absolute;
+    top: calc(var(--section-padding) * 0.25);
+    right: calc(var(--section-padding) * 0.25);
+  }
+
+  &--disabled {
+    filter: brightness(0.5);
+    cursor: not-allowed;
+
+    &:hover {
+      filter: brightness(0.75)
+    }
+  }
+}

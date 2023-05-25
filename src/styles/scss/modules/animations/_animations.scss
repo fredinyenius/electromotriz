@@ -1,0 +1,9 @@
+@keyframes shadowsBackground {
+  0% {
+    background-color: var(--primary-shadow-color);
+  }
+
+  100% {
+    background-color: var(--secondary-shadow-color);
+  }
+}

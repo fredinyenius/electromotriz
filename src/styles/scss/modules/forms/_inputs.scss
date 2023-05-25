@@ -1,0 +1,13 @@
+.input {
+  background-color: transparent;
+  border: 0.0625rem solid var(--primary-text-color);
+  border-radius: 0.25rem;
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family);
+  padding: 0.75em;
+  transition: border 0.25s;
+
+  &:hover {
+    border: 0.0625rem solid var(--primary-highlight-color);
+  }
+}

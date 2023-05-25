@@ -1,0 +1,38 @@
+.icon {
+  position: relative;
+  display: flex;
+  background-color: transparent;
+  border: 0;
+  color: var(--primary-text-color);
+  font-size: 2rem;
+  padding: 0;
+  filter: brightness(0.75);
+  cursor: pointer;
+  transition: filter 0.25s, color 0.25s;
+
+  &:hover {
+    filter: brightness(1);
+  }
+
+  &--xs {
+    font-size: 1.5rem;
+  }
+
+  &--sm {
+    font-size: 1.75rem;
+  }
+
+  &--close {
+    position: absolute;
+    top: var(--padding-nav);
+    right: var(--container-padding);
+    transition: filter 0.25s, color 0.25s, top 0.25s;
+  }
+
+  &--close,
+  &--menu {
+    @include desktop {
+      display: none;
+    }
+  }
+}

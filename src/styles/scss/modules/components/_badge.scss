@@ -1,0 +1,20 @@
+.badge {
+  background-color: var(--primary-theme-color);
+  border-radius: var(--primary-border-radius);
+  color: var(--primary-text-color);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.125em 0.375em;
+
+  &--primary {
+    background-color: var(--primary-highlight-color);
+    color: var(--light-primary-text-color);
+  }
+
+  &--shopping-cart {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+}

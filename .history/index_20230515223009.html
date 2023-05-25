@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Electromotriz Elmer</title>
+  <meta name="title" content="EAKON I Ingeniería en refrigeración" />
+  <meta name="description"
+    content="Servicios de calidad en refrigeración, aire acondicionado, calefacción, electrónica, data y automatización. Optimizando recursos a favor del ambiente." />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons8-servicio-de-coche-64.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="icons8-servicio-de-coche-64.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      scroll-behavior: smooth;
+      --dark-primary-text-color: #fff;
+      --light-primary-text-color: #000;
+      --light-primary-shadow-color: #00000080;
+      --light-secondary-shadow-color: #00000040;
+      --primary-highlight-color: #cb2027;
+      --secondary-highlight-color: #cb2027;
+      --primary-button-color: #cb2027;
+      --secondary-button-color: #cb2027;
+      --primary-font-family: 'Montserrat', sans-serif;
+      --container-max-width: 512px;
+      --container-padding: 1rem;
+      --section-padding: 1.5rem;
+      --primary-border-radius: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      :root {
+        --container-max-width: 1024px;
+        --container-padding: 0.75rem;
+        --section-padding: 2rem;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary-theme-color: #2f3a51;
+        --secondary-theme-color: #282c34;
+        --primary-text-color: #fff;
+        --secondary-text-color: #888;
+        --primary-shadow-color: #ffffff80;
+        --secondary-shadow-color: #ffffff40;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --primary-theme-color: #fff;
+        --secondary-theme-color: #eee;
+        --primary-text-color: #000;
+        --secondary-text-color: #777;
+        --primary-shadow-color: #00000080;
+        --secondary-shadow-color: #00000040;
+      }
+    }
+
+    :root.dark {
+      --primary-theme-color: #20232a;
+      --secondary-theme-color: #282c34;
+      --primary-text-color: #fff;
+      --secondary-text-color: #888;
+      --primary-shadow-color: #ffffff80;
+      --secondary-shadow-color: #ffffff40;
+    }
+
+    :root.light {
+      --primary-theme-color: #fff;
+      --secondary-theme-color: #eee;
+      --primary-text-color: #000;
+      --secondary-text-color: #777;
+      --primary-shadow-color: #00000080;
+      --secondary-shadow-color: #00000040;
+    }
+
+    .body {
+      background-color: var(--primary-theme-color);
+      color: var(--primary-text-color);
+      font-family: var(--primary-font-family);
+      margin: 0;
+      transition: background-color 0.25s, color 0.25s;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.25s;
+    }
+
+    .loader--modal {
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--light-primary-shadow-color);
+    }
+
+    .loader--hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader__spinner {
+      position: relative;
+    }
+
+    .loader__spinner::before,
+    .loader__spinner::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    .loader__spinner::before {
+      box-shadow: 0 0 0.25rem 0.125rem var(--secondary-shadow-color) inset;
+    }
+
+    .loader__spinner::after {
+      box-shadow: 0 0.125rem 0.125rem 0 var(--primary-highlight-color) inset;
+      animation: rotate 1s linear infinite;
+    }
+
+    .loader__spinner--modal {
+      width: 8rem;
+      height: 8rem;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <section class="loader loader--modal" id="loader">
+    <div class="loader__spinner loader__spinner--modal"></div>
+  </section>
+
+  <div id="root" class="root"></div>
+
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.classList.add('loader--hidden');
+
+      setTimeout(() => {
+        loader.remove();
+      }, 1000);
+    });
+
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || theme === 'light') {
+      document.documentElement.className = theme;
+    }
+  </script>
+</body>
+
+</html>

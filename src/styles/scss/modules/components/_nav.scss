@@ -1,0 +1,23 @@
+.nav {
+  --padding-nav: calc(var(--section-padding) * 0.75);
+  padding-top: var(--padding-nav);
+  padding-bottom: var(--padding-nav);
+  transition: padding 0.25s;
+
+  &--scroll {
+    --padding-nav: calc(var(--section-padding) * 0.5);
+  }
+
+
+  &__logo {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.nav-shopping-cart {
+  padding-top: var(--padding-nav);
+  padding-bottom: var(--padding-nav);
+  transition: padding 0.25s;
+}
