@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchReadProduct, fetchReadProducts, fetchReadProductId } from "../thunks/productsThunk";
+import { fetchReadProduct, fetchReadProducts, fetchReadProductId, fetchCreateProduct, fetchEditProduct, fetchDeleteProduct } from "../thunks/productsThunk";
 
 const initialState = {
   loading: false,
@@ -61,6 +61,51 @@ export const productsSlice = createSlice({
       state.error = action.payload;
       state.productId = {};
     });
+    builder.addCase(fetchCreateProduct.pending, (state) => {
+      state.loading = true;
+      state.error = {};
+      state.products = state.products
+    });
+    builder.addCase(fetchCreateProduct.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+      state.products = state.products
+    })
+    builder.addCase(fetchCreateProduct.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = {};
+      state.products = state.products;
+    })
+    builder.addCase(fetchEditProduct.pending, (state) => {
+      state.loading = true;
+      state.error = {};
+      state.products = state.products
+    })
+    builder.addCase(fetchEditProduct.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = {};
+      state.products = state.products;
+    })
+    builder.addCase(fetchEditProduct.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+      state.products = state.products
+    })
+    builder.addCase(fetchDeleteProduct.pending, (state) => {
+      state.loading = true;
+      state.error = {};
+      state.products = state.products
+    })
+    builder.addCase(fetchDeleteProduct.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = {};
+      state.products = state.products;
+    })
+    builder.addCase(fetchDeleteProduct.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+      state.products = state.products
+    })
   }
 });
 

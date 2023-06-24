@@ -5,6 +5,9 @@ import HomePage from "../pages/HomePage";
 import ProductPage from "../pages/ProductPage";
 import ProductsPage from "../pages/ProductsPage";
 import CartPage from "../pages/CartPage";
+import LoginPage from "../pages/Login";
+import UserMaintenancePage from "../pages/UserMaintenancePage";
+import BackofficeLayout from "../layouts/BackofficeLayout";
 //import LoginPage from "../pages/LoginPage";
 //import RegisterPage from "../pages/RegisterPage";
 //import AuthValidation from "./AuthValidation";
@@ -30,6 +33,24 @@ export const primaryRoute = createBrowserRouter([
       {
         path: 'carrito',
         element: <CartPage />
+      }
+    ]
+  },
+  {
+    path: '/login',
+    element: <LoginPage/>
+  },
+  {
+    path: '/mantenimiento',
+    element: <BackofficeLayout />,
+    children: [
+      {
+        path: 'productos',
+        element: <UserMaintenancePage/>
+      },
+      {
+        path: 'reportes',
+        element: <div>TODO</div>
       }
     ]
   }

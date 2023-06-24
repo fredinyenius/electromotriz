@@ -10,4 +10,7 @@
   &:hover {
     border: 0.0625rem solid var(--primary-highlight-color);
   }
+  &--block {
+    width: 100%;
+  }
 }

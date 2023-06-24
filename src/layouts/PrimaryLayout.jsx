@@ -11,8 +11,6 @@ const PrimaryLayout = () => {
       <main>
         <Outlet />
       </main>
-      
-      
     </>
   );
 };

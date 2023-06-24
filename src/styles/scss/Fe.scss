@@ -3,6 +3,7 @@
 @import './modules/layouts/sections';
 @import './modules/layouts/containers';
 @import './modules/layouts/elements';
+@import './modules/layouts/backoffice-layout';
 @import './modules/components/header';
 @import './modules/components/footer';
 @import './modules/components/nav';
@@ -14,6 +15,10 @@
 @import './modules/components/icons';
 @import './modules/components/badge';
 @import './modules/components/table';
+@import './modules/components/dialog';
+@import './modules/forms/label';
 @import './modules/forms/inputs';
 @import './modules/forms/selects';
 @import './modules/utils/utils';
+@import './modules/pages/login';
+@import './modules/pages/user-maintenance';
