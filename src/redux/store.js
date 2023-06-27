@@ -4,6 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import homeReducer from "./slices/homeSlice";
 import productsReducer from "./slices/productsSlice";
 import categoryReducer from './slices/categoriesSlice';
+import reportReducer from "./slices/reportSlice";
 //import servicesReducer from "./slices/servicesSlice";
 
 export const store = configureStore({
@@ -11,8 +12,9 @@ export const store = configureStore({
     home: homeReducer,
     products: productsReducer,
     categories: categoryReducer,
- //   aboutUs: aboutReducer,
-//    contact: contactReducer,
-//    service: servicesReducer,
+    reports: reportReducer
+    //   aboutUs: aboutReducer,
+    //    contact: contactReducer,
+    //    service: servicesReducer,
   }
 });

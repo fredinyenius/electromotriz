@@ -21,7 +21,7 @@ const initialValues = {
   slug: "",
 };
 
-const UserMaintenancePage = () => {
+const ProductMaintenancePage = () => {
   const createModalRef = useRef(null);
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -133,4 +133,4 @@ const UserMaintenancePage = () => {
   );
 };
 
-export default UserMaintenancePage;
+export default ProductMaintenancePage;
