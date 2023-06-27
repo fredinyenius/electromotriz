@@ -18,11 +18,18 @@ const CartPage = () => {
         if (!error) {
             const { id } = paymentMethod;
 
-            const { data } = await axios.post('http://localhost:3000/api/checkout', {
+        try {
+            const { data } = await axios.post('https://backend-senaty-production.up.railway.app/api/checkout', {
                 id,
-                totalPrice
+                amount: totalPrice
             });
             console.log(data);
+
+            elements.getElement(CardElement).clear();
+        } catch (error) {
+            console.log(error);
+        }
+            
         }
     };
     const [cart, setCart] = useState([]);
@@ -88,7 +95,7 @@ const CartPage = () => {
     
        <div  >
        <CardElement />
-      <button >BUY</button> 
+      <button >Comprar</button> 
        </div>
       
     </form>

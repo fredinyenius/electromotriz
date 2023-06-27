@@ -19,7 +19,7 @@ const CartPage = () => {
             const { id } = paymentMethod;
 
         try {
-            const { data } = await axios.post('http://localhost:3000/api/checkout', {
+            const { data } = await axios.post('https://backend-senaty-production.up.railway.app/api/checkout', {
                 id,
                 amount: totalPrice
             });

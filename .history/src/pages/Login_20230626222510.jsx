@@ -22,7 +22,7 @@ const LoginPage = () => {
       password: formState.password,
     };
     try {
-      const { data } = await axios.post("https://backend-senaty-production.up.railway.app/login", payload);
+      const { data } = await axios.post("http://localhost:3000/login", payload);
       const decodedData = jwtDecode(data.content);
       console.log(decodedData)
       //TODO: redirects

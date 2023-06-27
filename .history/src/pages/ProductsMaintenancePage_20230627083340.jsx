@@ -90,7 +90,7 @@ const ProductMaintenancePage = () => {
       <div className="table-title">
         <div className="row">
           <div className="col-6">
-            <h2>Mantenimiento de Productos</h2>
+            <h2>Mantenimiento de usuarios</h2>
           </div>
         </div>
       </div>
