@@ -7,7 +7,7 @@ export const fetchCategories = createAsyncThunk(
     try {
       const options = {
         method: 'GET',
-        url: `https://backend-senaty-production.up.railway.app/categorias`
+        url: `http://localhost:3000/categorias`
       };
       const { data } = await axiosInstance(options);
       return data ?? [];
