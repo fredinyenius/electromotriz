@@ -21,7 +21,7 @@ const CartPage = () => {
         try {
             const { data } = await axios.post('http://localhost:3000/api/checkout', {
                 id,
-                amount: totalPrice
+                totalPrice: totalPrice
             });
             console.log(data);
 
@@ -95,7 +95,7 @@ const CartPage = () => {
     
        <div  >
        <CardElement />
-      <button >Comprar</button> 
+      <button >BUY</button> 
        </div>
       
     </form>

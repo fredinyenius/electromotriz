@@ -95,7 +95,7 @@ const CartPage = () => {
     
        <div  >
        <CardElement />
-      <button >Comprar</button> 
+      <button >BUY</button> 
        </div>
       
     </form>

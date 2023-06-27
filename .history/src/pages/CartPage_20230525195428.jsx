@@ -18,18 +18,11 @@ const CartPage = () => {
         if (!error) {
             const { id } = paymentMethod;
 
-        try {
             const { data } = await axios.post('http://localhost:3000/api/checkout', {
                 id,
-                amount: totalPrice
+                totalPrice:{}
             });
             console.log(data);
-
-            elements.getElement(CardElement).clear();
-        } catch (error) {
-            console.log(error);
-        }
-            
         }
     };
     const [cart, setCart] = useState([]);
@@ -95,7 +88,7 @@ const CartPage = () => {
     
        <div  >
        <CardElement />
-      <button >Comprar</button> 
+      <button >BUY</button> 
        </div>
       
     </form>
