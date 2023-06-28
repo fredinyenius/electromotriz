@@ -39,16 +39,7 @@ const ListsNavLink = ({ className = '', handleClickList = () => { }, handleClick
           className={({ isActive }) => isActive ? "list__link list__link--active" : "list__link"}
           onClick={handleClickNavLink}
         >
-          Carrito
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/Login"
-          className={({ isActive }) => isActive ? "list__link list__link--active" : "list__link"}
-          onClick={handleClickNavLink}
-        >
-          Iniciar Sesión
+          carrito
         </NavLink>
       </li>
     </ul>

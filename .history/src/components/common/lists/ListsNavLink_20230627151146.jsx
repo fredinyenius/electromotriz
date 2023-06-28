@@ -39,7 +39,7 @@ const ListsNavLink = ({ className = '', handleClickList = () => { }, handleClick
           className={({ isActive }) => isActive ? "list__link list__link--active" : "list__link"}
           onClick={handleClickNavLink}
         >
-          Carrito
+          carrito
         </NavLink>
       </li>
       <li>

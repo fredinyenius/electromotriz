@@ -33,8 +33,9 @@ const LoginPage = () => {
   };
   return (
     <>
-    <h1 >Iniciar Sesion</h1>
-    <div className="login-wrapper">
+    
+      <div className="login-wrapper">
+        <h1>Iniciar Sesion</h1>
         <form className="form" onSubmit={onSubmitHandler}>
           <div className="form-group">
             <label className="label">Email address</label>
@@ -56,7 +57,7 @@ const LoginPage = () => {
               onChange={(e) => updateState(e.target.value, "password")}
             />
           </div>
-          <button type="submit" className="button button--primary">
+          <button onClick={} type="submit" className="button button--primary">
             Ingresar
           </button>
         </form>

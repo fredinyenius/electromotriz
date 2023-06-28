@@ -53,9 +53,9 @@ const ProductReportPage = () => {
     dispatcher(fetchGetProductReport({ ...formState }));
   };
 
-  //if (!reportData || reportData?.length === 0) {
-  //  return <div>No se encontraron resultados</div>;
-  //}
+  if (!reportData || reportData?.length === 0) {
+    return <div>No se encontraron resultados</div>;
+  }
 
   return (
     <div style={{ position: "relative" }}>

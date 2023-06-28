@@ -33,7 +33,6 @@ const LoginPage = () => {
   };
   return (
     <>
-    <h1 >Iniciar Sesion</h1>
     <div className="login-wrapper">
         <form className="form" onSubmit={onSubmitHandler}>
           <div className="form-group">
